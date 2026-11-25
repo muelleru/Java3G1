@@ -18,10 +18,10 @@ public class Rechner extends JFrame {
         setVisible(true);
         setLayout(new FlowLayout());
 
-        txtZahl1 = new JTextField();
+        txtZahl1 = new JTextField(10);
         add(txtZahl1);
 
-        txtZahl2 = new JTextField();
+        txtZahl2 = new JTextField(10);
         add(txtZahl2);
 
         btnAdd = new JButton("+");
@@ -30,10 +30,39 @@ public class Rechner extends JFrame {
         btnSub = new JButton("-");
         add(btnSub);
 
-        txtErgebnis = new JTextField();
+        txtErgebnis = new JTextField(10);
         txtErgebnis.setEditable(false);
         add(txtErgebnis);
 
+        setListener();
+
+        pack();
+        setResizable(false);
     }
 
+    public void setListener() {
+        btnAdd.addActionListener();
+        btnSub.addActionListener();
+    }
+
+    public void onPlus() {
+        try{
+            int z1 = Integer.parseInt(txtZahl1.getText());
+            int z2 = Integer.parseInt(txtZahl2.getText());
+            int res = z1 + z2;
+            txtErgebnis.setText(String.valueOf(res));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this,"ERROR " + e.getMessage());
+        }
+    }
+    public void onMinus() {
+        try{
+            int z1 = Integer.parseInt(txtZahl1.getText());
+            int z2 = Integer.parseInt(txtZahl2.getText());
+            int res = z1 - z2;
+            txtErgebnis.setText(String.valueOf(res));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this,"ERROR " + e.getMessage());
+        }
+    }
 }
