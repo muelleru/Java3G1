@@ -32,13 +32,17 @@ public class Lambdas extends Workable {
         List<Integer> liste1 = new ArrayList<>(List.of(10,5,8,11,3,4,2,12,1));
         System.out.println(liste1);
         System.out.println("SORTIERE");
-        sortiere(liste1, (x,y) -> x-y);
+        sortiere(liste1, (x,y) -> {
+            int res = x % 2 - y % 2;
+            if(res != 0) return res;
+            return x-y;
+        });
         System.out.println(liste1);
     }
     public <T> void sortiere(List<T> collection, MyComparable<T> compare) {
         for (int i = 0; i < collection.size()-1; i++) {
             for (int j = i+1; j < collection.size() ; j++) {
-                if( compare.compareTo(collection.get(i),collection.get(j)) < 0) {
+                if( compare.compareTo(collection.get(i),collection.get(j)) > 0) {
                 //tauschen
                     T tmp = collection.get(i);
                     collection.set(i, collection.get(j));
