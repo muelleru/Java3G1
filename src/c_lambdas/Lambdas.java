@@ -28,6 +28,32 @@ public class Lambdas extends Workable {
         int compareTo(T a, T b);
     }
 
+    public void test3() {
+
+        int x = 10;
+        int y = 20;
+
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                // x und y sind final (const)
+                for(int i = x; i <= y; i++) {
+                    System.out.println(i);
+                }
+            }
+        };
+
+        r.run();
+        Runnable r2 = () -> {
+            for(int i = x; i <= y; i++) {
+                System.out.println(i);
+            }
+        };
+        r2.run();
+
+    }
+
+
     public void test2() {
         List<Integer> liste1 = new ArrayList<>(List.of(10,5,8,11,3,4,2,12,1));
         System.out.println(liste1);
@@ -81,6 +107,6 @@ public class Lambdas extends Workable {
 
     @Override
     public void doWork() {
-        test2();
+        test3();
     }
 }
