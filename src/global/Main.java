@@ -7,7 +7,7 @@ import a_verschiedenes.nonnull.Nonnull;
 import a_verschiedenes.optional.OptionalTest;
 import a_verschiedenes.switches.Switches;
 import a_verschiedenes.typeinference.TypeInference;
-import topleveltolambda.toplevel.TopLevel;
+import b_topleveltolambda.toplevel.TopLevel;
 
 import java.util.ArrayList;
 import java.util.List;

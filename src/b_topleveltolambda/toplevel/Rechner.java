@@ -1,4 +1,4 @@
-package topleveltolambda.toplevel;
+package b_topleveltolambda.toplevel;
 
 import javax.swing.*;
 import java.awt.*;
