@@ -1,6 +1,6 @@
 package a_verschiedenes.defaults;
 
-public interface Tier {
+public interface Tier  {
     String getName();
     String getRasse();
     void schreien();
