@@ -2,8 +2,10 @@ package global;
 
 import a_verschiedenes.collectioninit.CollectionInit;
 import a_verschiedenes.defaults.Defaults;
+import a_verschiedenes.instanceoftest.InstanceOfTest;
 import a_verschiedenes.nonnull.Nonnull;
 import a_verschiedenes.optional.OptionalTest;
+import a_verschiedenes.switches.Switches;
 import a_verschiedenes.typeinference.TypeInference;
 
 import java.util.ArrayList;
@@ -17,7 +19,9 @@ public class Main {
         workableList.add(new Nonnull().setActive(false));
         workableList.add(new OptionalTest().setActive(false));
         workableList.add(new CollectionInit().setActive(false));
-        workableList.add(new TypeInference().setActive(true));
+        workableList.add(new TypeInference().setActive(false));
+        workableList.add(new Switches().setActive(false));
+        workableList.add(new InstanceOfTest().setActive(true));
         for(Workable workable : workableList) {
             if(workable.isActive()) {
                  workable.doWork();
