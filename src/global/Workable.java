@@ -3,7 +3,7 @@ package global;
 public abstract class Workable {
 
     private boolean isActive;
-    abstract void doWork();
+    public abstract void doWork();
 
     public Workable() {
         setActive(true);
