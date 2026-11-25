@@ -41,8 +41,8 @@ public class Rechner extends JFrame {
     }
 
     public void setListener() {
-        btnAdd.addActionListener();
-        btnSub.addActionListener();
+        btnAdd.addActionListener(new ButtonAddActionAdapter(this));
+        btnSub.addActionListener(new ButtonSubActionAdapter(this));
     }
 
     public void onPlus() {
