@@ -3,7 +3,7 @@ package c_lambdas;
 import global.Workable;
 
 import java.util.function.IntBinaryOperator;
-import java.util.function.
+
 public class Lambdas extends Workable {
 
     // Funktionales Interface mit genau einer Methode
