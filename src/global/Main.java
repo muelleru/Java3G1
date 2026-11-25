@@ -9,6 +9,7 @@ import a_verschiedenes.switches.Switches;
 import a_verschiedenes.typeinference.TypeInference;
 import b_topleveltolambda.toplevel.TopLevel;
 import c_lambdas.Lambdas;
+import uebung.lambdas.UebungLambdas;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,9 @@ public class Main {
         workableList.add(new Switches().setActive(false));
         workableList.add(new InstanceOfTest().setActive(false));
         workableList.add(new TopLevel().setActive(false));
-        workableList.add(new Lambdas().setActive(true));
+        workableList.add(new Lambdas().setActive(false));
+        workableList.add(new UebungLambdas().setActive(true));
+
         for(Workable workable : workableList) {
             if(workable.isActive()) {
                  workable.doWork();
