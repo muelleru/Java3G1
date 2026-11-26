@@ -6,10 +6,8 @@ import data.PersonenGenerator;
 import global.Workable;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Streams extends Workable {
@@ -87,11 +85,49 @@ public class Streams extends Workable {
         System.out.println(personen2);
     }
 
+    public void test3() {
 
+        List<Person> pliste = PersonenGenerator.getInstance().createPersonen(100);
+        boolean b1 = pliste.stream().allMatch( p-> p.getGehalt() > 2601);
+        boolean b2 = pliste.stream().anyMatch( p-> p.getGeburt().getYear() == 1980);
+        System.out.println("Alle haben ein Gehalt > 2500: " + b1);
+        System.out.println("Mindestens eine Person ist 1980 geboren: " + b2);
 
+        long cnt = pliste.stream().filter( p-> p.getGeburt().getYear() == 1980).count();
+        System.out.println("#1980: " + cnt);
+
+        Optional<Person> firstOrEmpty = pliste.stream().filter( p-> p.getGeburt().getYear() == 1980).findFirst();
+        if(firstOrEmpty.isPresent())
+        {
+            System.out.println(firstOrEmpty.get());
+        } else {
+            System.out.println("KEINEN GEFUNDEN");
+        }
+
+    }
+
+    public void test4() {
+        // Group
+        List<Person> pliste = PersonenGenerator.getInstance().createPersonen(100);
+        Map<String,List<Person>> countNamen = pliste.stream().collect(Collectors.groupingBy(p->p.getNachname()));
+        for(var kvp : countNamen.entrySet()) {
+            System.out.println(kvp.getKey() + " -> " + kvp.getValue().size());
+        }
+        for(var kvp : countNamen.entrySet()) {
+            System.out.println(kvp.getKey() + " -> " + kvp.getValue());
+        }
+    }
+
+    public void test5() {
+        ArrayList<String> liste = new ArrayList<>(List.of("Anton", "Berta"));
+        var stream1 = liste.stream().filter( x->x.length() == 5);  // .toList(); toList führt aus!!!!
+        liste.add("ABCDE");
+        liste.add("12345");
+        stream1.forEach(System.out::println); // Verzögerte Ausführung
+    }
 
     @Override
     public void doWork() {
-        test2();
+        test5();
     }
 }
