@@ -11,6 +11,7 @@ import b_topleveltolambda.toplevel.TopLevel;
 import c_lambdas.Lambdas;
 import d_streams.Streams;
 import e_generics.Generics;
+import g_reflections.Reflections;
 import uebung.lambdas.UebungLambdas;
 import uebung.lambdas.UebungLambdas2;
 
@@ -33,8 +34,8 @@ public class Main {
         workableList.add(new UebungLambdas().setActive(false));
         workableList.add(new UebungLambdas2().setActive(false));
         workableList.add(new Streams().setActive(false));
-        workableList.add(new Generics().setActive(true));
-
+        workableList.add(new Generics().setActive(false));
+        workableList.add(new Reflections().setActive(true));
         for(Workable workable : workableList) {
             if(workable.isActive()) {
                  workable.doWork();
