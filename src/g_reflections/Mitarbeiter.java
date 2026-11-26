@@ -1,7 +1,6 @@
 package g_reflections;
 
 public class Mitarbeiter {
-
     @CSVName(name = "Nr")
     private int id;
     @CSVName(name = "Name")

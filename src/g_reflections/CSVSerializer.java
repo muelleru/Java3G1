@@ -49,4 +49,11 @@ public class CSVSerializer {
         }
         return String.join(";", felder);
     }
+
+    public static <T> T deserialize(String csv) {
+
+
+
+
+    }
 }
