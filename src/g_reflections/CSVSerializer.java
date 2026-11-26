@@ -1,6 +1,7 @@
 package g_reflections;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -71,6 +72,12 @@ public class CSVSerializer {
               "Farbe" : "Blau"
             }
            */
+        try {
+            obj = meta.getDeclaredConstructor().newInstance(); // meta.newInstance();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
         for (Field field : meta.getDeclaredFields()) {
             field.setAccessible(true);
             CSVIgnore csvignore = field.getAnnotation(CSVIgnore.class);
@@ -83,9 +90,14 @@ public class CSVSerializer {
                     attrName = field.getName();
                 }
                 try {
-                    obj = meta.getDeclaredConstructor().newInstance(); // meta.newInstance();
-                    if (felder.containsKey(attrName)) {
-                        field.set(obj, felder.get(attrName));
+                     if (felder.containsKey(attrName)) {
+                        if(field.getType() == int.class || field.getType() == Integer.class) {
+                           field.set(obj, Integer.parseInt(felder.get(attrName)));
+                        } else if(field.getType() == String.class) {
+                            field.set(obj, felder.get(attrName));
+                        } else {
+
+                        }
                     }
                 } catch (Exception e) {
                     throw new RuntimeException(e);
