@@ -12,9 +12,9 @@ public class PersonenGenerator {
 
     }
 
-    private PersonenGenerator instance = null;
+    private static PersonenGenerator instance = null;
 
-    public PersonenGenerator getInstance() {
+    public static PersonenGenerator getInstance() {
         if (instance == null) {
             instance = new PersonenGenerator();
         }
