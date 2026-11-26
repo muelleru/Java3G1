@@ -9,8 +9,8 @@ public class CSVSerializer {
     //    public static String serialize(Object o) {
 //
 //    }
-    public static <T> String createHeader(T o) {
-        Class meta = o.getClass();
+    //   public static <T> String createHeader(T o) {
+    public static String createHeader(Class meta) {
         List<String> felder = new ArrayList<>();
         for (Field field : meta.getDeclaredFields()) {
             field.setAccessible(true);
@@ -27,7 +27,7 @@ public class CSVSerializer {
                 }
             }
         }
-        return String.join(";",felder);
+        return String.join(";", felder);
     }
 
 
@@ -47,6 +47,6 @@ public class CSVSerializer {
                 }
             }
         }
-        return String.join(";",felder);
+        return String.join(";", felder);
     }
 }

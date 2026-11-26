@@ -11,7 +11,7 @@ public class Reflections extends Workable {
     private void t1() {
         Mitarbeiter m = new Mitarbeiter();
         String csv = CSVSerializer.serialize(m);
-        System.out.println(CSVSerializer.createHeader(m));
+        System.out.println(CSVSerializer.createHeader(Mitarbeiter.class));
         System.out.println(CSVSerializer.serialize(m));
     }
 }
