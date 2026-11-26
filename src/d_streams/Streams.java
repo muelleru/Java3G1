@@ -28,6 +28,7 @@ public class Streams extends Workable {
 
         pliste.add(new Person(90000,"Traude","Chef", LocalDate.ofYearDay(2020,100), 12000,Geschlecht.Weiblich ));
 
+
         // System.out.println(frauenU9000.count());
         //frauenU9000.forEach(System.out::println);
         List<Person> listeFrauen9000 = frauenU9000.toList();
