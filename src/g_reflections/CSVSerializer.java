@@ -20,14 +20,14 @@ public class CSVSerializer {
                 // CSVIgnore ist nicht vorhanden
                 if (csvname != null) {
                     //Csvname ist vorhanden
-
+                    felder.add(csvname.name());
                 } else {
                     //Csvname ist nicht vorhanden
-
+                    felder.add(field.getName());
                 }
-
             }
         }
+        return String.join(";",felder);
     }
 
 
