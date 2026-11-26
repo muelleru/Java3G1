@@ -85,6 +85,8 @@ public class UebungLambdas2 extends Workable {
             //for(int i = 0; i <= 20*Math.PI; i++) {
             double x = 0.0;
             while (x <= 2 * Math.PI) {
+//                final double x2 = x;
+//                funclist.forEach( p-> System.out.printf("| %f ", p.f(x2)));
                 for (var func : funclist) {
                     System.out.printf("| %f ", func.f(x));
                 }
@@ -92,10 +94,7 @@ public class UebungLambdas2 extends Workable {
                 x += 0.1;
             }
         }
-
     }
-
-
     @Override
     public void doWork() {
         new Aufgabe2().run();
