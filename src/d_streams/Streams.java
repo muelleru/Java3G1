@@ -85,8 +85,10 @@ public class Streams extends Workable {
         var personen2 = new ArrayList<>(pliste.stream().filter(p-> p.getId() < 10).toList());
         personen2.add(new Person());
         System.out.println(personen2);
-
     }
+
+
+
 
     @Override
     public void doWork() {
