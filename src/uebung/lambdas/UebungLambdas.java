@@ -105,8 +105,10 @@ interface Newton {
 
     @Override
     public void doWork() {
-        //a1();
-        //a2();
+        a1();
+        a2();
+        afg3();
+        afg4();
         afg5();
     }
 
