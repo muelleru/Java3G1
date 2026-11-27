@@ -1,11 +1,12 @@
 package data;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 // public enum Geschlecht { Weiblich, Männlich, Divers }
 
-public class Person {
-
+public class Person implements Serializable {
+    private static final long serialVersionUID = 42;
     private int id;
     private String vorname;
     private String nachname;
