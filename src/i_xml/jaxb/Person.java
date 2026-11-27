@@ -1,10 +1,8 @@
 package i_xml.jaxb;
 
-import data.LocalDataAdapter;
 import jakarta.xml.bind.annotation.*;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 // public enum Geschlecht { Weiblich, Männlich, Divers }

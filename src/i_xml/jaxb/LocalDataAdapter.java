@@ -1,4 +1,4 @@
-package data;
+package i_xml.jaxb;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 

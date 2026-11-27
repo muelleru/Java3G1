@@ -14,15 +14,15 @@ public class Main {
             Registry registry = LocateRegistry.getRegistry("localhost", 5000);
             HamsterService service = (HamsterService) registry.lookup("HamsterService");
             // Der Service ist ein Remote-Objekt
-          for (int i = 1 ; i<=5;i++) {
-              try {
-                  Hamster h = service.getHamster(i); // Kopie holen
-                  System.out.println(h);
-              } catch (Exception e) {
-                  System.out.println(e.getMessage());
-              }
-          }
-        } catch(Exception e) {
+            for (int i = 1; i <= 5; i++) {
+                try {
+                    Hamster h = service.getHamster(i); // Kopie holen
+                    System.out.println(h);
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
