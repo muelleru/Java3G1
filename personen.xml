@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<personen>          <!-- Root -->
+    <person id="1">
+        <vorname>Paul</vorname>
+        <nachname>Maier</nachname>
+    </person>
+    <person id="2">
+        <vorname>Dörte</vorname>
+        <nachname>Schneider</nachname>
+        <auto id="1" hersteller="VW" typ="Käfer" />
+    </person>
+</personen>

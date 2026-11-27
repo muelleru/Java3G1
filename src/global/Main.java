@@ -13,6 +13,7 @@ import d_streams.Streams;
 import e_generics.Generics;
 import g_reflections.Reflections;
 import h_serialize.SerializeTest;
+import i_xml.sax.SAXParserTest;
 import uebung.lambdas.UebungLambdas;
 import uebung.lambdas.UebungLambdas2;
 
@@ -37,7 +38,8 @@ public class Main {
         workableList.add(new Streams().setActive(false));
         workableList.add(new Generics().setActive(false));
         workableList.add(new Reflections().setActive(false));
-        workableList.add(new SerializeTest().setActive(true));
+        workableList.add(new SerializeTest().setActive(false));
+        workableList.add(new SAXParserTest().setActive(true));
         for(Workable workable : workableList) {
             if(workable.isActive()) {
                  workable.doWork();

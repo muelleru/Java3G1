@@ -38,7 +38,6 @@ public class SerializeTest extends Workable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
     }
 
     // Person{id=1, vorname='Heike', nachname='Schmid', geburt=1975-08-04, gehalt=6573.0, geschlecht=Weiblich}
