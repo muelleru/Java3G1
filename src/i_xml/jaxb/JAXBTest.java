@@ -4,6 +4,7 @@ import global.Workable;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Unmarshaller;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -13,8 +14,19 @@ public class JAXBTest extends Workable {
     @Override
 
     public void doWork() {
-        test2();
-
+        test3();
+    }
+    private void test3() {
+        try {
+            JAXBContext context = JAXBContext.newInstance(PersonenListe.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            PersonenListe pliste;
+            File file = new File("jaxbpersonen2.xml");
+            pliste = (PersonenListe) unmarshaller.unmarshal(file);
+            pliste.forEach(System.out::println);
+        } catch (JAXBException ex) {
+            ex.printStackTrace();
+        }
     }
     private void test2() {
         try {
