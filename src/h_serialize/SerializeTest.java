@@ -16,6 +16,7 @@ public class SerializeTest extends Workable {
     public void doWork() {
         //  testSerialize();
         //   testDeserialize();
+        testBinarySerializer();
     }
 
     void testBinarySerializer() {
