@@ -10,7 +10,7 @@ public class RMIServer extends Workable {
     public void doWork() {
         try {
             Registry registry = LocateRegistry.createRegistry(5000);
-
+            registry.bind("HamsterService", new HamsterServiceImpl());
 
         } catch (Exception ex) {
             ex.printStackTrace();

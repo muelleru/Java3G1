@@ -3,7 +3,7 @@ package j_rmi;
 import java.io.Serializable;
 
 public class Hamster implements Serializable {
-
+    // evtl id; ...
     private int id;
     private String name;
     private String farbe;

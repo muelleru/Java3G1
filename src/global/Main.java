@@ -16,6 +16,7 @@ import h_serialize.SerializeTest;
 import i_xml.jaxb.JAXBTest;
 import i_xml.jdom.JDomParserTest;
 import i_xml.sax.SAXParserTest;
+import j_rmi.RMIServer;
 import uebung.lambdas.UebungLambdas;
 import uebung.lambdas.UebungLambdas2;
 
@@ -43,7 +44,8 @@ public class Main {
         workableList.add(new SerializeTest().setActive(false));
         workableList.add(new SAXParserTest().setActive(false));
         workableList.add(new JDomParserTest().setActive(false));
-        workableList.add(new JAXBTest().setActive(true));
+        workableList.add(new JAXBTest().setActive(false));
+        workableList.add(new RMIServer().setActive(true));
         for(Workable workable : workableList) {
             if(workable.isActive()) {
                  workable.doWork();
