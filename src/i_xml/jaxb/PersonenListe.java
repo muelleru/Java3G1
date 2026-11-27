@@ -1,5 +1,6 @@
 package i_xml.jaxb;
 
+import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.List;
 @XmlRootElement(name="Personen")
 public class PersonenListe implements Iterable<Person> {
 
+    @XmlElement(name = "Person")
     private List<Person> pliste;
 
     public PersonenListe() {
