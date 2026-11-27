@@ -22,6 +22,6 @@ public class LocalDataAdapter extends XmlAdapter<String, LocalDate> {
 
     @Override
     public String marshal(LocalDate o) throws Exception {
-        return String.format("%4d-%2d-%2d", o.getYear(), o.getMonthValue(), o.getDayOfMonth());
+        return String.format("%04d-%02d-%02d", o.getYear(), o.getMonthValue(), o.getDayOfMonth());
     }
 }
