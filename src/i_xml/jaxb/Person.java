@@ -1,17 +1,30 @@
 package i_xml.jaxb;
 
+import data.LocalDataAdapter;
+import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 
 // public enum Geschlecht { Weiblich, Männlich, Divers }
 
+@XmlRootElement(name = "Mitarbeiter")
 public class Person  {
-
+    @XmlAttribute(name="Id")
     private int id;
+    @XmlAttribute(name="Vorname")
     private String vorname;
+    @XmlAttribute(name="Nachname")
     private String nachname;
+    //@XmlTransient
+     @XmlJavaTypeAdapter(LocalDataAdapter.class)
+     @XmlAttribute(name="Geburt")
     private LocalDate geburt;
+
+    @XmlAttribute(name="Gehalt")
     private double gehalt; // Nicht serialisieren
+    @XmlAttribute(name="Geschlecht")
     private Geschlecht geschlecht;
 
     public Person() {
@@ -27,24 +40,23 @@ public class Person  {
         this.geschlecht = geschlecht;
     }
 
+    @XmlTransient
     public int getId() {
         return id;
     }
-
     public Person setId(int id) {
         this.id = id;
         return this;
     }
-
+    @XmlTransient
     public String getVorname() {
         return vorname;
     }
-
     public Person setVorname(String vorname) {
         this.vorname = vorname;
         return this;
     }
-
+    @XmlTransient
     public String getNachname() {
         return nachname;
     }
@@ -53,7 +65,7 @@ public class Person  {
         this.nachname = nachname;
         return this;
     }
-
+    @XmlTransient
     public LocalDate getGeburt() {
         return geburt;
     }
@@ -62,7 +74,7 @@ public class Person  {
         this.geburt = geburt;
         return this;
     }
-
+    @XmlTransient
     public double getGehalt() {
         return gehalt;
     }
@@ -71,7 +83,7 @@ public class Person  {
         this.gehalt = gehalt;
         return this;
     }
-
+    @XmlTransient
     public Geschlecht getGeschlecht() {
         return geschlecht;
     }

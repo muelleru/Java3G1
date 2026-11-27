@@ -22,6 +22,7 @@ public class JAXBTest extends Workable {
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             File file = new File("jaxbpersonen.xml");
             marshaller.marshal(p,file);
+            System.out.println("OK");
         } catch (JAXBException ex) {
             ex.printStackTrace();
         }
