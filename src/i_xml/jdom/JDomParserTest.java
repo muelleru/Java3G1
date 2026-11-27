@@ -36,6 +36,7 @@ public class JDomParserTest extends Workable {
                 personList.add(new Person().setVorname(vn).setNachname(nn).setId(id));
             }
             personList.forEach(System.out::println);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
