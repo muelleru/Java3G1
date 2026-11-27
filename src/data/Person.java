@@ -11,7 +11,7 @@ public class Person implements Serializable {
     private String vorname;
     private String nachname;
     private LocalDate geburt;
-    private double gehalt;
+    private /*transient*/ double gehalt; // Nicht serialisieren
     private Geschlecht geschlecht;
 
     public Person() {
