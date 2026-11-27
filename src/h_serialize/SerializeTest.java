@@ -16,17 +16,23 @@ public class SerializeTest extends Workable {
 
     @Override
     public void doWork() {
-        testSerialize();
+     //  testSerialize();
+        testDeserialize();
     }
-
+// Person{id=1, vorname='Heike', nachname='Schmid', geburt=1975-08-04, gehalt=6573.0, geschlecht=Weiblich}
+// Person{id=1, vorname='Heike', nachname='Schmid', geburt=1975-08-04, gehalt=6573.0, geschlecht=Weiblich}
     void testDeserialize() {
         String fn = "person.bin";
         Path path = Path.of(fn);
+        Person p = null;
         if (Files.exists(path)) {
             try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fn))) {
-
-
-
+                Object obj =  ois.readObject();
+                if(obj instanceof Person ) {
+                    p = (Person)obj;
+                    System.out.println(p);
+                }
+                System.out.println("DESERIALIZE OK");
             } catch (Exception e) {
                 e.printStackTrace();
             }
