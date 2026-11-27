@@ -17,6 +17,6 @@ public class PersonenHandler extends DefaultHandler {
 
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
-        System.out.println("String: " + new String(ch,start,length).replace("\n","LF"));
+        System.out.println("String: " + new String(ch,start,length).replace("\n","*LF*"));
     }
 }
